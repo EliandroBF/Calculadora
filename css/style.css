@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+body {
+  background-image: linear-gradient(to right, #999, #111);
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  max-height: 100vh;
+  grid-template-columns: repeat(4, 100px); /* Transforma os botoes em 4 colunas de 100px*/
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* Transforma os botoes em 5 linhas de 100px*/
+}
+
+.grid-container > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid #111;
+  outline: none;
+  background-color: #111;
+  color: #eee;
+}
+
+.grid-container > button:hover {
+  background-color: aquamarine;
+  color: #999;
+}
+
+.grid-container > .operator {
+  background: #41b88375;
+}
+
+.span-two {
+  grid-column: span 2; /* Expande o bottom em duas colunas*/
+}
+
+.grid-container > .output {
+  grid-column: 1 / -1; /* Fez o output pegar a linha inteira de cima*/
+  background: #222;
+  display: flex;
+  flex-direction: column;/* Quebra a linha do display flex...  */
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word; /* Permita que palavras longas possam quebrar e quebrar na próxima linha */
+  word-break: break-all; /*Quebre palavras em qualquer caractere*/
+}
+
+.grid-container > .output > .previus-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.3rem;
+}
+
+.grid-container > .output > .current-operand {
+  color: white;
+  font-size: 2.3rem;
+}
